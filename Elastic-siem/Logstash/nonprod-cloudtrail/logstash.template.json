@@ -1,0 +1,44 @@
+{
+    "index_patterns": ["index-pattern-name-*"],
+    "template": {
+      "settings": {
+        "number_of_shards": 1
+      },
+      "mappings": {
+        "_source": {
+          "enabled": true
+        },
+        "properties": {
+          "host_name": {
+            "type": "keyword"
+          },
+          "@timestamp": {
+            "type": "date"
+          },
+          "name": {
+            "type": "keyword"
+          },
+          "state": {
+            "type": "integer"
+          },
+          "class": {
+            "type": "keyword"
+          },
+          "created_at": {
+            "type": "date",
+            "format": "EEE MMM dd HH:mm:ss Z yyyy"
+          }
+        }
+      },
+      "aliases": {
+        "mydata": { }
+      }
+    },
+    "priority": 500,
+    "composed_of": [],
+    "version": 3,
+    "_meta": {
+      "description": "Cloudtrail Logs for Non-prod"
+    }
+  }
+
